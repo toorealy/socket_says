@@ -1,2 +1,35 @@
 # socket_says
-The easiest way to connect to another computer and send data
+A wrapper for a very common use of the `socket` library.
+## Usage
+### Importing
+```python
+from socket_says import SocketSays
+```
+### Assigning
+```python
+simon = SocketSays(<address>, <port>)
+simon = SocketSays() <-- Uses Defaults
+```
+The defaults are:
+- Address: `127.0.0.1`
+- Port: `80`
+- Text: `'Hello'` <-- Because it's friendly
+```python
+str(simon)
+"You are telling 127.0.0.1 on port 80 'Hello'"
+repr(simon)
+'<SocketSays(127.0.0.1,80,Hello)>'
+```
+
+### Usage
+On your end...
+```python
+simon.says(<text>)
+simon.says() #<-- Uses Default 'Hello'
+simon.says('SocketSays is easy')
+```
+And on the receiving end...
+```
+Hello
+SocketSays is easy
+```
