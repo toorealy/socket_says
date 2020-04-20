@@ -1,0 +1,4 @@
+[flake8]
+ignore = E225, E126, E722
+max_line_length = 120
+exclude = .git,__pycache__,build,dist,.\.eggs\pytest_runner-5.2-py3.8.egg\ptr.py

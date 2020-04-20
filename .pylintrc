@@ -1,0 +1,20 @@
+[MASTER]
+ignore=tests
+
+[MESSAGE CONTROL]
+disable=invalid-name,                # C0103
+        missing-module-docstring,    # C0114
+        missing-class-docstring,     # C0115
+        missing-function-docstring,  # C0116
+        #wrong-import-order,          # C0411
+        too-many-arguments,          # R0913
+        no-self-argument,            # E0213
+        no-self-use,                 # R0201
+        no-member,                    # E1101
+        bare-except                  # W0702
+
+[FORMATTING]
+max-line-length=120
+
+[MISCELLANEOUS]
+notes=FIXME
