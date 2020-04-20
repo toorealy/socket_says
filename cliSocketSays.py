@@ -15,7 +15,6 @@ from socket_says.socket_says import SocketSays
               help='Text to send (can be multiline)')
 def cliSocketSays(addr, port, text):
     if addr and port and text != "":
-        print("Going for it")
         simon = SocketSays(addr, port)
         simon.says(text)
         simon.listens()
