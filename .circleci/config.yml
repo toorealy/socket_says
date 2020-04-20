@@ -17,7 +17,7 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
             ./setup install
-            ./cliSocketSays -a 192.168.150.136 -p 7458 -t 'test'
+            python3 ./cliSocketSays.py -a 192.168.150.136 -p 7458 -t 'test'
           name: Test
 
 workflows:
