@@ -12,7 +12,11 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: .\cliSocketSays -a 192.168.150.136 -p 7458 -t 'test'
+          command: |
+            python3 -m venv venv
+            . venv/bin/activat
+            pip install -r requirements/dev.txt
+            .\cliSocketSays -a 192.168.150.136 -p 7458 -t 'test'
           name: Test
 
 workflows:
