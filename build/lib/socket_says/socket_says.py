@@ -75,6 +75,9 @@ class SocketSays(ABC):
         except ConnectionRefusedError:
             print("I'm sorry. The connection was refused to {} port {}".format(self.address, self.port))
             return None
+        except TimeoutError:
+            print("The connection attempt timed out. Perhaps noone is listening?")
+            return None
 
     @property
     def address(self):
