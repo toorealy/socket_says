@@ -40,10 +40,11 @@ class SocketSays(ABC):
         for line in self.text.splitlines():
             self.volley(self.format_text(line + '\n', special))
 
-    def listens(self, /, multiple=4500):
+    def listens(self, /, multiple=4500, timeout=1.5):
         """ Creates SocketSays' ability to receive on the socket"""
         try:
-            self.socket.settimeout(1.5)
+            if timeout != 0:  #  Timeout of zero means persistent listener
+                self.socket.settimeout(1.5)
             print(self.socket.recv(2048 * multiple).decode())
         except:
             pass
@@ -51,8 +52,7 @@ class SocketSays(ABC):
     def volley(self, text: str):
         if self.socket:
             self.socket.send(text)
-        else:
-            print("There is no connection")
+            self.listens()
 
     def close_socket(self):
         try:
