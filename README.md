@@ -1,9 +1,10 @@
-# socket_says
+# socket_says [![CircleCI](https://circleci.com/gh/toorealy/socket_says.svg?style=svg)](https://circleci.com/gh/toorealy/socket_says)
 A wrapper for the very common use of the `socket` library.
-## Usage
+
+## `socket_says` Class Usage
 ### Importing
 ```python
->>> from socket_says import SocketSays
+>>> from socket_says.socket_says import SocketSays
 ```
 ### Assigning
 ```python
@@ -45,6 +46,15 @@ On your end...
 >>> simon.listens()
 simon says touch your custom_errors
 
+```
+
+## `cliSocketSays` Usage
+```bash
+user@computer:~$ python3 cliSocketSays.py -a <addr> -p <port> -t <text>
+user@computer:~$ python3 cliSocketSays.py -a 192.168.150.136 -p 7357 -t """Hello
+old
+friend
+"""
 ```
 
 ### Error Behavior
